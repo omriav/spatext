@@ -228,7 +228,7 @@
     </div>
   </section>
 
-  <!-- Background Replacement -->
+  <!-- General Examples -->
   <section class="section">
     <div class="container is-max-desktop">
       <div class="columns is-centered has-text-centered">
@@ -660,6 +660,114 @@
     </div>
   </section>
 
+  <!-- Mask Sensitivity -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-12">
+          <h3 class="title is-4">Mask Sensitivity</h3>
+          <div class="content has-text-justified">
+            <p>
+              During our experiments, we noticed that the model generates images that correspond to the implicit masks
+              in the spatio-textual representation, but not <i>perfectly</i>. Nevertheless, we argue that this
+              characteristic can be beneficial. For example, given a general animal shape mask (first image), the model
+              is able to generate a diverse set of results driven by the different local prompts. It changes the body
+              type according to the local prompt, while leaving the overall posture of the character intact.
+            </p>
+
+            <section class="hero is-light is-small">
+              <div class="hero-body">
+                <div class="container">
+                  <div id="results-carousel" class="carousel results-carousel">
+                    <div class="item has-text-centered">
+                      <p class="caption global-prompt">"a sunny day outdoors"</p>
+                      <img src="./static/images/mask_insensitivity/cat/vis.jpg" />
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/white_cat.jpg" />
+                      <p class="caption mask-a">"a white cat"</p>
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/shiba_inu.jpg" />
+                      <p class="caption mask-a">"a Shiba Inu dog"</p>
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/goat.jpg" />
+                      <p class="caption mask-a">"a goat"</p>
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/pig.jpg" />
+                      <p class="caption mask-a">"a pig"</p>
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/rabbit.jpg" />
+                      <p class="caption mask-a">"a black rabbit"</p>
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/donkey.jpg" />
+                      <p class="caption mask-a">"a gray donkey"</p>
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/panda.jpg" />
+                      <p class="caption mask-a">"a panda bear"</p>
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/gorilla.jpg" />
+                      <p class="caption mask-a">"a gorilla"</p>
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/toad.jpg" />
+                      <p class="caption mask-a">"a toad"</p>
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/cow.jpg" />
+                      <p class="caption mask-a">"a cow"</p>
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/statue_of_liberty.jpg" />
+                      <p class="caption mask-a">"The Statue of Liberty"</p>
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/golden_calf.jpg" />
+                      <p class="caption mask-a">"a golden calf"</p>
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/shark.jpg" />
+                      <p class="caption mask-a">"a shark"</p>
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/cactus.jpg" />
+                      <p class="caption mask-a">"a cactus"</p>
+                    </div>
+                    <div class="item has-text-centered">
+                      <p class="caption" style="visibility: hidden;">a sunny day outdoors</p>
+                      <img src="./static/images//mask_insensitivity/cat/tortoise.jpg" />
+                      <p class="caption mask-a">"a tortoise"</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- <section class="section" id="BibTeX">
     <div class="container is-max-desktop content">
@@ -681,9 +789,9 @@
         <a class="icon-link" href="https://arxiv.org/abs/2206.02779">
           <i class="fas fa-file-pdf"></i>
         </a>
-        <a class="icon-link" href="https://github.com/omriav/blended-latent-diffusion" class="external-link" disabled>
+        <!-- <a class="icon-link" href="https://github.com/omriav/blended-latent-diffusion" class="external-link" disabled>
           <i class="fab fa-github"></i>
-        </a>
+        </a> -->
       </div>
       <div class="columns is-centered">
         <div class="column is-8">
