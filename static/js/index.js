@@ -1,7 +1,7 @@
 $(document).ready(function () {
   $('.results-carousel').slick({
     dots: false,
-    infinite: false,
+    infinite: true,
     slidesToShow: 2,
     slidesToScroll: 2,
     // responsive: [
