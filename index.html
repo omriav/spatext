@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SpaText</title>
+  <link rel="icon" href="static/images/favicon.ico">
+  <link rel="canonical" href="https://omriavrahami.com/spatext" />
+
+  <!-- Global site tag (gtag.js) - Google Analytics -->
+  <!-- <script async src="https://www.googletagmanager.com/gtag/js?id=G-58DTY07P81"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-58DTY07P81');
+  </script> -->
+
+  <!-- Meta tags -->
+  <meta name="keywords"
+    content="SpaText, Controllable Image Generation, Spatio-Textual Representation for Controllable Image Generation">
+  <meta property="og:site_name" content="SpaText: Spatio-Textual Representation for Controllable Image Generation">
+  <meta property="og:title" content="SpaText: Spatio-Textual Representation for Controllable Image Generation">
+  <meta name="description" content="A new method for text-to-image generation using open-vocabulary scene control.">
+  <meta property="og:description"
+    content="A new method for text-to-image generation using open-vocabulary scene control.">
+
+  <meta property="og:image" content="https://omriavrahami.com/spatext/static/images/teaser_1200_630.png">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+
+  <!-- <meta property="og:image"
+    content="https://omriavrahami.com/spatext/static/images/teaser_whatsapp.jpg">
+  <meta property="og:image:width" content="300">
+  <meta property="og:image:height" content="300"> -->
+
+  <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro" rel="stylesheet">
+
+  <link rel="stylesheet" href="./static/css/bulma.min.css">
+  <link rel="stylesheet" href="./static/css/bulma-carousel.min.css">
+  <link rel="stylesheet" href="./static/css/fontawesome.all.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick.css" />
+  <link rel="stylesheet" type="text/css" href="./static/slick/slick-theme.css" />
+  <link rel="stylesheet" href="./static/css/index.css">
+
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script defer src="./static/js/fontawesome.all.min.js"></script>
+  <script src="./static/js/bulma-carousel.min.js"></script>
+  <script type="text/javascript" src="./static/slick/slick.min.js"></script>
+  <script src="./static/js/index.js"></script>
+</head>
+
+<body>
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container is-max-desktop">
+        <div class="columns is-centered">
+          <div class="column has-text-centered">
+            <h1 class="title is-1 publication-title">SpaText: Spatio-Textual Representation for Controllable Image
+              Generation</h1>
+            <div class="is-size-5 publication-authors">
+              <span class="author-block">
+                <a href="https://omriavrahami.com">Omri Avrahami</a><sup>1,2</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.linkedin.com/in/thomas-hayes-529008155">Thomas Hayes</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://ai.facebook.com/people/oran-gafni/">Oran Gafni</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://research.facebook.com/people/gupta-sonal/">Sonal Gupta</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://ytaigman.github.io/">Yaniv Taigman</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://faculty.cc.gatech.edu/~parikh/">Devi Parikh</a><sup>1</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://www.cs.huji.ac.il/~danix/">Dani Lischinski</a><sup>2</sup>
+              </span>
+              <span class="author-block">
+                <a href="https://www.ohadf.com/">Ohad Fried</a><sup>3</sup>,
+              </span>
+              <span class="author-block">
+                <a href="https://xiyinmsu.github.io/">Xi Yin</a><sup>1</sup>,
+              </span>
+            </div>
+
+            <div class="is-size-5 publication-authors">
+              <span class="author-block"><sup>1</sup>Meta AI Research,</span>
+              <span class="author-block"><sup>2</sup>The Hebrew University of Jerusalem,</span>
+              <span class="author-block"><sup>3</sup>Reichman University</span>
+            </div>
+
+            <!-- <div>
+              <p style="font-size:23px;font-weight:bold;padding-top: 5px;">CVPR 2022</p>
+            </div> -->
+
+            <div class="column has-text-centered">
+              <div class="publication-links">
+                <!-- PDF Link. -->
+                <span class="link-block">
+                  <a href="https://arxiv.org/abs/TODO" class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="ai ai-arxiv"></i>
+                    </span>
+                    <span>arXiv</span>
+                  </a>
+                </span>
+
+                <!-- Video Link.
+                <span class="link-block">
+                  <a href="https://www.youtube.com/watch?v=MrKrnHhk8IA"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-youtube"></i>
+                    </span>
+                    <span>Video</span>
+                  </a>
+                </span> -->
+
+                <!-- Code Link. -->
+                <!-- <span class="link-block">
+                  <a href="https://github.com/omriav/blended-latent-diffusion"
+                    class="external-link button is-normal is-rounded is-dark">
+                    <span class="icon">
+                      <i class="fab fa-github"></i>
+                    </span>
+                    <span>Code</span>
+                  </a>
+                </span> -->
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hero teaser">
+    <div class="container is-max-desktop">
+      <div class="hero-body">
+        <div id="teaser" class="has-text-centered">
+          <img style="width: 100%;" src="./static/images/teaser_1200_630.png" alt="Blended Latent Diffusion teaser.">
+        </div>
+
+        <h2 class="subtitle has-text-centered">
+          <span class="method-name">SpaText</span> - new method for text-to-image generation using open-vocabulary scene
+          control.
+        </h2>
+      </div>
+    </div>
+  </section>
+
+  <!-- Abstract. -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-four-fifths">
+          <h2 class="title is-3">Abstract</h2>
+          <div class="content has-text-justified">
+            <p>
+              Recent text-to-image diffusion models are able to generate convincing results of unprecedented quality.
+              However, it is nearly impossible to control the shapes of different regions/objects or their layout in a
+              fine-grained fashion. Previous attempts to provide such controls were hindered by their reliance on a
+              fixed set of labels. To this end, we present SpaText - a new method for text-to-image generation using
+              open-vocabulary scene control. In addition to a global text prompt that describes the entire scene, the
+              user provides a segmentation map where each region of interest is annotated by a free-form natural
+              language description. Due to lack of large-scale datasets that have a detailed textual description for
+              each region in the image, we choose to leverage the current large-scale text-to-image datasets and base
+              our approach on a novel CLIP-based spatio-textual representation, and show its effectiveness on two
+              state-of-the-art diffusion models: pixel-based and latent-based. In addition, we show how to extend the
+              classifier-free guidance method in diffusion models to the multi-conditional case and present an
+              alternative accelerated inference algorithm. Finally, we offer several automatic evaluation metrics and
+              use them, in addition to FID scores and a user study, to evaluate our method and show that it achieves
+              state-of-the-art results on image generation with free-form textual scene control.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Method explanation -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-12">
+          <h2 class="title is-3">Method</h2>
+
+          <div class="content has-text-justified">
+
+            <p>
+              We aim to provide the user with more fine-grained control over the generated image. In addition to a
+              single <strong>global</strong> text prompt, the user will also provide a segmentation map, where the
+              content of each segment of interest is described using a <strong>local</strong> free-form text prompt.
+            </p>
+
+            <p>
+              However, current large-scale text-to-image datasets cannot be used for this task because they do not
+              contain local text descriptions for each segment in the images. Hence, we need to develop a way to extract
+              the objects in the image along with their textual description. To this end, we opt to use a pre-trained
+              panoptic segmentation model along with a CLIP model.
+            </p>
+
+            <div class="container">
+              <img src="./static/images/method.png" />
+              <br />
+            </div>
+
+            <p>
+              During training (left) - given a training image x, we extract K random segments, pre-process them
+              and extract their CLIP image embeddings. Then we stack these embeddings in the same shapes of the segments
+              to form the spatio-textual representation ST. During inference (right) - we embed the local prompts
+              into the CLIP text embedding space, then convert them using the prior model P to the CLIP image
+              embeddings space, lastly, we stack them in the same shapes of the inputs masks to form the spatio-textual
+              representation ST.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Background Replacement -->
+  <section class="section">
+    <div class="container is-max-desktop">
+      <div class="columns is-centered has-text-centered">
+        <div class="column is-12">
+          <h2 class="title is-3">Results</h2>
+          <h3 class="title is-4">Examples</h3>
+          <div class="content has-text-justified">
+            <p>
+              Samples of generated images from input text and our proposed spatio-textual representations. Each pair
+              consists of an (i) input global text (top left, black), a spatio-textual representation describing each
+              segment using free-form text prompts (left, colored text and sketches), and (ii) the corresponding
+              generated image (right). (The colors are for illustration purposes only, and do not affect the actual
+              inputs.)
+            </p>
+          </div>
+
+          <section class="hero is-light is-small">
+            <div class="hero-body">
+              <div class="container">
+                <div id="results-carousel" class="carousel results-carousel">
+
+                  <div class="item has-text-centered">
+                    <p class="caption global-prompt">"in the forest"</p>
+                    <img src="./static/images/general_examples/cat_spread/vis.jpg" width="100%" />
+                    <p class="caption mask-a">"a black cat with a red sweater and a blue jeans"</p>
+                  </div>
+                  <div class="item has-text-centered">
+                    <p class="caption" style="visibility: hidden;">a</p>
+                    <img src="./static/images/general_examples/cat_spread/pred.jpg" width="100%" />
+                  </div>
+
+                  <div class="item has-text-centered">
+                    <p class="caption global-prompt">"a sunny day near the Eiffel tower"</p>
+                    <img src="./static/images/general_examples/labrador_hand_ball/vis.jpg" width="100%" />
+                    <p class="caption mask-a">"a white Labrador"</p>
+                    <p class="caption mask-b">"a blue ball"</p>
+                  </div>
+                  <div class="item has-text-centered">
+                    <p class="caption" style="visibility: hidden;">"a sunny day near the Eiffel tower"</p>
+                    <img src="./static/images/general_examples/labrador_hand_ball/pred_eiffel.jpg" width="100%" />
+                  </div>
+
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- <section class="section" id="BibTeX">
+    <div class="container is-max-desktop content">
+      <h2 class="title">BibTeX</h2>
+      <p>If you find this research useful, please cite the following:</p>
+
+      <pre><code>@article{avrahami2022blended_latent,
+        title={Blended Latent Diffusion},
+        author={Avrahami, Omri and Fried, Ohad and Lischinski, Dani},
+        journal={arXiv preprint arXiv:2206.02779},
+        year={2022}
+}</code></pre>
+    </div>
+  </section> -->
+
+  <footer class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <a class="icon-link" href="https://arxiv.org/abs/2206.02779">
+          <i class="fas fa-file-pdf"></i>
+        </a>
+        <a class="icon-link" href="https://github.com/omriav/blended-latent-diffusion" class="external-link" disabled>
+          <i class="fab fa-github"></i>
+        </a>
+      </div>
+      <div class="columns is-centered">
+        <div class="column is-8">
+          <div class="content">
+            <p>
+              Was adapted from <a href="https://github.com/nerfies/nerfies.github.io">this</a> source code.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
+</html>
